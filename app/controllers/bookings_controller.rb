@@ -10,8 +10,18 @@ class BookingsController < ApplicationController
     @booking.client = current_user.client
 
     if @booking.save
-      redirect_to car_path(@car)
+      redirect_to booking_path(@booking)
     end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking = Booking.update(booking_status)
+    redirect_to booking_path(@booking) if @booking.save
   end
 
   def destroy
@@ -22,7 +32,11 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:sattus, :start_day, :end_day, :car_id)
+    params.require(:booking).permit(:status, :start_day, :end_day, :car_id)
+  end
+
+  def booking_status
+    params.require(:booking).permit(:status)
   end
 
   def set_booking

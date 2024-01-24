@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+  resources :cars, only: [:index]
   resources :users, only: [:show, :edit, :update]  do
-    resources :bookings, only: [:new, :create, :destroy]
-    resources :cars
+    resources :bookings, only: [:new, :create, :edit, :update, :destroy]
+
   end
 
 end

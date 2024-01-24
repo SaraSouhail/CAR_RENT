@@ -13,8 +13,8 @@ class CarsController < ApplicationController
 
   def create
     @car = car.new(car_params)
-    Owener.create(user: current_user) if current_user.owener.blank?
-    @car.owener = current_user.owener
+    Owener.create(user: current_user) if current_user.owner.blank?
+    @car.owner = current_user.owner
     @car.save
 
   end
