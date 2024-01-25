@@ -1,2 +1,11 @@
 <h1>Bookings#new</h1>
 <p>Find me in app/views/bookings/new.html.erb</p>
+<%= simple_form_for @booking, html: { class: 'booking-form' } do |f| %>
+  <div class="form-group ms-3">
+    <%= f.input :start_day, class: 'form-control' %>
+  </div>
+  <div class="form-group ms-3">
+    <%= f.input :end_day, class: 'form-control' %>
+  </div>
+  <%= f.submit 'Submit', class: 'btn btn-primary ms-3' %>
+<% end %>
