@@ -16,7 +16,6 @@ class CarsController < ApplicationController
     Owener.create(user: current_user) if current_user.owner.blank?
     @car.owner = current_user.owner
     @car.save
-
   end
 
   def update
