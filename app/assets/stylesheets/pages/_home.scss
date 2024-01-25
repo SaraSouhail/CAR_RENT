@@ -3,7 +3,7 @@
 	font-family: 'Montserrat', sans-serif;
 }
 body {
-	background: #f1fbff ;
+	background: #ffffff ;
 }
 .section-padding {
 	padding: 100px 0;
@@ -169,7 +169,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 50px;
-  background-color: #f2f2f2;
+  background-color: #ffffff;
 }
 
 .my-navbar-nav {
@@ -200,6 +200,30 @@ body {
   background-color: #f2f2f2;
   padding: 50px 0;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.car-brands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+.brand-logo {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#bnz img {
+  width: 149px;
+  margin-left: -24px;
+}
+.brand-logo img {
+  width: 100%;
+  height: auto;
 }
 
 .footer {
