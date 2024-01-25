@@ -16,7 +16,6 @@ class CarsController < ApplicationController
     Owener.create(user: current_user) if current_user.owener.blank?
     @car.owener = current_user.owener
     @car.save
-
   end
 
   def update
