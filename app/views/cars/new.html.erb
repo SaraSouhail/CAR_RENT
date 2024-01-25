@@ -1,2 +1,27 @@
-<h1>Cars#new</h1>
-<p>Find me in app/views/cars/new.html.erb</p>
+<br>
+<h1 class="title-header text-center text-warning ">Add a Car</h1>
+<%= simple_form_for @car do |f| %>
+  <div class="row p-5 auth-div">
+  <div class="form-inputs ms-3">
+    <%= f.input :brand,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "brand", class: "form-control col-md-6 input-width" } %>
+    <%= f.input :model,
+                required: false,
+                input_html: { autocomplete: "model", class: "form-control col-md-6 input-width" } %>
+    <%= f.input :price,
+                required: false,
+                input_html: { autocomplete: "price", class: "form-control col-md-6 input-width" } %>
+    <div class="col-sm-10">
+      <%= f.input :description,
+                  required: true,
+                  input_html: { autocomplete: "description", class: 'form-control input-width' } %>
+    </div>
+    </div>
+
+    <div class="form-actions ms-3 text-center">
+      <%= f.button :submit, "Create", class: "btn btn-primary" %>
+    </div>
+    <% end %>
+  </div>

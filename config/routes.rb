@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+  get "profile_client", to: "pages#profile_client", as: :client
+  get "profile_owner", to: "pages#profile_owner", as: :owner
   resources :cars
   resources :bookings, only: [:new, :create]
 

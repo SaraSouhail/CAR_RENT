@@ -1,8 +1,9 @@
-.container {
-  box-shadow: 1px 1px 3px gray;
+.car-container {
+  box-shadow: 4px 4px 4px rgb(65, 64, 64);
   width: fit-content;
   height: fit-content;
-  background-color: #F8F0E5;
+  color: black;
+  background-color: #e6e3e3;
 }
 
 .car-image {
@@ -17,13 +18,13 @@
 }
 
 .btn-primary {
-  background-color: #102C57;
+  background-color: #ffc107;
   color: #F8F0E5;
-  border: none;
+  border: #102C57;
   border-radius: 5px;
 }
 .btn:hover {
   background-color: #F8F0E5;
-  color: #102C57;
+  color: #000000;
   border: 1px solid #000000;
 }
