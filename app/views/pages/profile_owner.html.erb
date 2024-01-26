@@ -1,7 +1,6 @@
 <% owner = current_user.owner %>
-<%  owner = Owner.create(user: current_user) %>
 
-<div class="containersara d-flex align-items-center justify-content-evenly" >
+<div class="containersara">
   <div class="sidebarsara">
     <div class="owner-photo">
       <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier" , class: "profile-img-sara"%>
@@ -12,18 +11,25 @@
       <p><span class="bold">Address:  </span><%= owner.user.address %></p>
       <p><span class="bold">Email:  </span><%= owner.user.email %></p>
       <p><span class="bold">my role:  </span><%= owner.user.role %></p>
+       <button class="btn btn-primary mb-2 request-btn"><%= link_to "Car rent requests", bookings_path, style: "color: white; text-decoration: none;"  %></button>
       <!-- Add more owner information here -->
     </div>
   </div>
   <div class="my-offers">
-    <div style="margin-left: 530px"><button class="btn btn-primary mb-2"><%= link_to "Add", new_car_path, style: "color: white; text-decoration: none;" %></button></div>
-    <div class="col-lg-4 car-container align-items-center justify-content-center d-flex p-4 position-relative me-5">
+    <div style="margin-left: 440px"><button class="btn btn-primary mb-2"><%= link_to "Add a new car", new_car_path, style: "color: white; text-decoration: none;" %></button></div>
+    <% cars = owner.cars %>
+        <% cars.each do |car| %>
+    <div class="col-lg-4 car-container align-items-center justify-content-center d-flex p-4 position-relative me-5 mb-4">
         <div><img class="car-image" src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" alt="car-image"></div>
         <div class="car-details py-3 px-4">
-          <h3>Audi RS7 model: 2021</h3>
-          <p>Price for one day: 300 MAD</p>
+          <h5>Brand:  </span><%= car.brand %></h5>
+          <h5>Model:  </span><%= car.model %></h5>
+          <h5>description:  </span><%= car.description %></h5>
+          <p>price for one day:  </span><%= car.price %></p>
         </div>
-        <button class="btn btn-danger position-absolute bottom-0 end-0 me-3 my-2"><%= link_to "Delete", bookings_new_path, style: "color: white; text-decoration: none;" %></button>
-      </div>
+        <button class="btn btn-danger position-absolute bottom-0 end-0 me-3 my-2"><%= link_to "Delete", car_path(car)  ,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, style: "color: white; text-decoration: none;" %></button>
+       </div>
+       <% end %>
+
   </div>
 </div>

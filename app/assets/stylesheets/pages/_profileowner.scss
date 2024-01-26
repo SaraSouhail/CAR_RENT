@@ -2,11 +2,9 @@
   height: fit-content;
   width: 300px;
   text-align: center;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
   margin-bottom: 20px;
-  background-color: white;
+  margin-left: 40px;
+  background-color: rgb(236, 235, 235);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 5px 5px 5px rgba(190, 190, 190, 0.5);
@@ -16,4 +14,20 @@
 }
 .profile-img-sara{
   border-radius: 50%;
+}
+
+.containersara {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 100px;
+}
+
+.my-offers {
+  margin-right: 300px;
+}
+
+.request-btn:hover {
+  background-color: rgb(228, 149, 4);
+  color: black;
 }

@@ -13,9 +13,10 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-    Owener.create(user: current_user) if current_user.owner.blank?
+    # @owner = Owner.create(user: current_user) if current_user.owner.blank?
     @car.owner = current_user.owner
-    @car.save
+    @car.save!
+    redirect_to owner_path
   end
 
   def update
@@ -34,7 +35,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :price)
+    params.require(:car).permit(:brand, :model, :price, :description)
   end
 
   def set_car

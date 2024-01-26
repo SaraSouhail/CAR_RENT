@@ -9,11 +9,15 @@ Rails.application.routes.draw do
 
   get "profile_client", to: "pages#profile_client", as: :client
   get "profile_owner", to: "pages#profile_owner", as: :owner
-  resources :cars
-  resources :bookings, only: [:new, :create]
+  # get "/cars/:id", to: "cars#destroy", as: :delete_car
+  get "/bookings/:id", to: "bookings#destroy", as: :delete_booking
 
-  resources :users, only: [:show, :edit, :update]  do
-    resources :bookings, only: [ :edit, :update, :destroy]
+  post "/accept_booking/:id", to: "bookings#accept"
+  post "/reject_booking/:id", to: "bookings#reject"
+
+  resources :cars do
+    resources :bookings, only: [ :new, :create]
   end
+  resources :bookings, only: [:index, :edit, :update, :destroy]
 
 end
