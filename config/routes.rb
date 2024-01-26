@@ -11,11 +11,9 @@ Rails.application.routes.draw do
   get 'bookings/destroy'
   devise_for :users
   root to: "pages#home"
+  get 'pages/profile_client', to: 'pages#profile_client'
 
   resources :cars, only: [:index]
-  resources :users, only: [:show, :edit, :update]  do
-    resources :bookings, only: [:new, :create, :edit, :update, :destroy]
+  resources :bookings, only: [:new, :create, :edit, :update, :destroy]
 
   end
-
-end
