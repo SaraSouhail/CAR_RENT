@@ -1,178 +1,214 @@
-// Specific CSS for your home-page
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 * {
-  font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 body {
-  background: #F1FBFF ;
+	background: #ffffff ;
 }
 .section-padding {
-  padding: 100px 0;
+	padding: 100px 0;
 }
 .carousel-item {
-  height: 100vh;
-  min-height: 300px;
+	height: 100vh;
+	min-height: 300px;
 }
 .carousel-caption {
-  bottom: 220px;
-  z-index: 2;
+	bottom: 220px;
+	z-index: 2;
 }
 .carousel-caption h5 {
-  font-size: 45px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 25px;
+	font-size: 45px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 25px;
 }
 .carousel-caption p {
-  width: 60%;
-  margin: auto;
-  font-size: 18px;
-  line-height: 1.9;
+	width: 60%;
+	margin: auto;
+	font-size: 18px;
+	line-height: 1.9;
 }
 .carousel-inner:before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 1;
 }
+
 .navbar {
-  background-color: #2B2B2A;
+  background-color: #2b2b2a;
+
 }
 .navbar .getstarted {
-  background: #106EEA;
-  margin-left: 30px;
-  border-radius: 4px;
-  font-weight: 400;
-  color: #fff;
-  text-decoration: none;
-  padding: .5rem 1rem;
-  line-height: 2.3;
+	background: #106eea;
+	margin-left: 30px;
+	border-radius: 4px;
+	font-weight: 400;
+	color: #fff;
+	text-decoration: none;
+	padding: .5rem 1rem;
+	line-height: 2.3;
 }
 .navbar-nav a {
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 500;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 500;
 }
 .navbar-light .navbar-brand {
-  color: #000;
-  font-size: 25px;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
+	color: #000;
+	font-size: 25px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
 }
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-  color: #000;
+	color: #000;
 }
 .navbar-light .navbar-nav .nav-link {
-  color: #000;
+	color: #000;
 }
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-  color: #000;
+	color: #000;
 }
 .w-100 {
-  height: 100vh;
+	height: 100vh;
 }
 .navbar-toggler {
-  padding: 1px 5px;
-  font-size: 18px;
-  line-height: 0.3;
-  background: #fff;
+	padding: 1px 5px;
+	font-size: 18px;
+	line-height: 0.3;
+	background: #fff;
 }
 .portfolio .card {
-  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
+	box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
 }
 .team .card {
-  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
+	box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.15);
 }
 .services .card-body i {
-  font-size: 50px;
+	font-size: 50px;
 }
 .team .card-body i {
-  font-size: 20px;
+	font-size: 20px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .carousel-caption {
-    bottom: 370px;
-  }
-  .carousel-caption p {
-    width: 100%;
-  }
-  .card {
-    margin-bottom: 30px;
-  }
-  .img-area img {
-    width: 100%;
-  }
+	.carousel-caption {
+		bottom: 370px;
+	}
+	.carousel-caption p {
+		width: 100%;
+	}
+	.card {
+		margin-bottom: 30px;
+	}
+	.img-area img {
+		width: 100%;
+	}
 }
 @media only screen and (max-width: 767px) {
-  .navbar-nav {
-    text-align: center;
-  }
-  .carousel-caption {
-    bottom: 125px;
-  }
-  .carousel-caption h5 {
-    font-size: 17px;
-  }
-  .carousel-caption a {
-    padding: 10px 15px;
-    font-size: 15px;
-  }
-  .carousel-caption p {
-    width: 100%;
-    line-height: 1.6;
-    font-size: 12px;
-  }
-  .about-text {
-    padding-top: 50px;
-  }
-  .card {
-    margin-bottom: 30px;
-  }
+	.navbar-nav {
+		text-align: center;
+	}
+	.carousel-caption {
+		bottom: 125px;
+	}
+	.carousel-caption h5 {
+		font-size: 17px;
+	}
+	.carousel-caption a {
+		padding: 10px 15px;
+		font-size: 15px;
+	}
+	.carousel-caption p {
+		width: 100%;
+		line-height: 1.6;
+		font-size: 12px;
+	}
+	.about-text {
+		padding-top: 50px;
+	}
+	.card {
+		margin-bottom: 30px;
+	}
 }
+
 .card {
   width: 18rem;
   margin: 1rem;
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 .card-img-top {
   width: 100%;
   height: 15vw;
   object-fit: cover;
 }
+<<<<<<< HEAD
 .card-body {
   padding: 1rem;
 }
+=======
+
+.card-body {
+  padding: 1rem;
+}
+
+>>>>>>> master
 .card-title {
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 .card-text {
   font-size: 0.9rem;
   color: #666;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 .my-navbar {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
+<<<<<<< HEAD
   background-color: #F2F2F2;
 }
+=======
+  background-color: #ffffff;
+}
+
+>>>>>>> master
 .my-navbar-nav {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
 }
+<<<<<<< HEAD
 .my-nav-item {
   margin: 0 5px;
 }
+=======
+
+.my-nav-item {
+  margin: 0 5px;
+}
+
+>>>>>>> master
 .my-nav-link {
   display: block;
   padding: 5px 10px;
@@ -181,6 +217,7 @@ body {
   text-decoration: none;
   color: #333;
 }
+<<<<<<< HEAD
 .my-nav-link:hover {
   background-color: #ddd;
 }
@@ -189,6 +226,19 @@ body {
   padding: 50px 0;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+=======
+
+.my-nav-link:hover {
+  background-color: #ddd;
+}
+
+.services{
+  background-color: #f2f2f2;
+  padding: 50px 0;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+>>>>>>> master
 .car-brands {
   display: flex;
   justify-content: center;
@@ -212,20 +262,33 @@ body {
   width: 100%;
   height: auto;
 }
+<<<<<<< HEAD
 .carproducers_list>li.with-title {
   padding-bottom: 20px;
 }
+=======
+
+>>>>>>> master
 .footer {
   background-color: #333;
   color: #fff;
   padding: 0;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
 .other-links {
   display: flex;
   list-style: none;
@@ -234,18 +297,30 @@ body {
   flex-basis: 60%;
   flex-wrap: wrap;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 .other-links a {
   color: #fff;
   text-decoration: none;
   margin-right: 15px;
   margin-bottom: 15px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 .copyright {
   flex-basis: 100%;
   text-align: center;
   margin-top: -9px;
   font-size: 9px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 .copyright a {
   color: #fff;
   text-decoration: none;

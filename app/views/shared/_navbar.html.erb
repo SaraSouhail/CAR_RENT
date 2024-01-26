@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <div class="navbar navbar-expand-lg navbar-light navbar-lewagon bg-light fixed-top ">
+=======
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon bg-light fixed-top">
+>>>>>>> master
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <span class="text-warning">Car</span>Rent
@@ -6,20 +10,33 @@
      <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
      <span class="navbar-toggler-icon"></span>
      </button>
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
+        <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link" %>
           </li>
+        <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Cars", cars_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <% if current_user.role == "owner" %>
+              <%= link_to "Profile", owner_path, class: "nav-link" %>
+            <% end %>
+            <% if current_user.role == "client" %>
+              <%= link_to "Profile", client_path, class: "nav-link" %>
+            <% end %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,6 +49,18 @@
             </div>
           </li>
         <% else %>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#services">Services</a>
+					</li>
+					<%# <li class="nav-item">
+						<a class="nav-link" href="#team">Team</a>
+					</li> %>
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">Contact</a>
+					</li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
           </li>
@@ -50,6 +79,11 @@
           <li class="nav-item">
             <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
           </li>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
         <% end %>
       </ul>
     </div>

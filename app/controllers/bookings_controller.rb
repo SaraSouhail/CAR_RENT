@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Bookmark.new(booking_params)
     @booking.car = @car
+    @booking.client = current_user
     Client.create(user: current_user) if current_user.client.blank?
     @booking.client = current_user.client
 
@@ -32,7 +33,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :start_day, :end_day, :car_id)
+    params.require(:booking).permit(:start_day, :end_day)
   end
 
   def booking_status

@@ -1,0 +1,30 @@
+.car-container {
+  box-shadow: 4px 4px 4px rgb(65, 64, 64);
+  width: fit-content;
+  height: fit-content;
+  color: black;
+  background-color: #e6e3e3;
+}
+
+.car-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 3%;
+}
+
+.car-details {
+  height: 200px;
+  width: fit-content;
+}
+
+.btn-primary {
+  background-color: #ffc107;
+  color: #F8F0E5;
+  border: #102C57;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: #F8F0E5;
+  color: #000000;
+  border: 1px solid #000000;
+}

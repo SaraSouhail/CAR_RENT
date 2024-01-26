@@ -1,2 +1,23 @@
 <h1>Cars#index</h1>
-<p>Find me in app/views/cars/index.html.erb</p>
+<h1 class="title-header">Cars Offers</h1>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-4 car-container align-items-center justify-content-center d-flex p-4 position-relative me-5">
+        <div><img class="car-image" src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" alt="car-image"></div>
+        <div class="car-details py-3 px-4">
+          <h3>Audi RS7 model: 2021</h3>
+          <p>Price for one day: 300 MAD</p>
+        </div>
+        <button class="btn btn-primary position-absolute bottom-0 end-0 me-3 my-2"><%= link_to "Book", bookings_new_path, style: "color: white; text-decoration: none;" %></button>
+      </div>
+      <div class="col-lg-4 car-container align-items-center justify-content-center d-flex p-4 position-relative me-5">
+        <div><img class="car-image" src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" alt="car-image"></div>
+        <div class="car-details py-3 px-4">
+          <h3>Audi RS7 model: 2021</h3>
+          <p>Price for one day: 300 MAD</p>
+        </div>
+        <button class="btn btn-primary position-absolute bottom-0 end-0 me-3 my-2"><%= link_to "Book", bookings_new_path, style: "color: white; text-decoration: none;" %></button>
+      </div>
+    </div>
+  </div>
+</div>
