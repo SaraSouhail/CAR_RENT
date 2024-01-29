@@ -254,10 +254,13 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 #bnz img {
-  width: 149px;
-  margin-left: -24px;
+  width: 162px;
+  margin-left: -32px;
+  margin-top: 0px;
 }
+
 .brand-logo img {
   width: 100%;
   height: auto;
@@ -272,7 +275,7 @@ body {
 .footer {
   background-color: #333;
   color: #fff;
-  padding: 0;
+  padding: 35px;
 }
 <<<<<<< HEAD
 =======
@@ -325,3 +328,33 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
+.contacts-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: #AEADAD;
+}
+li{
+  list-style: none;
+}
+.widget-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #FFC107;
+}
+.icon-email{
+ padding-left: 10px;
+}
+.icon-email a{
+  padding-left: 10px;
+  text-decoration: none;
+  color: #AEADAD;
+ }
+.icon-phone{
+  padding-left: 10px;
+ }

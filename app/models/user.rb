@@ -10,4 +10,14 @@ class User < ApplicationRecord
 
   has_one :client
   has_one :owner
+
+  after_create :create_by_role
+
+  def create_by_role
+    if self.role == 'client'
+      Client.create(user: self)
+    else
+      Owner.create(user: self)
+    end
+  end
 end

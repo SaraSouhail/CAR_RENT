@@ -1,17 +1,25 @@
 class BookingsController < ApplicationController
+  before_action :set_car, only: [:new, :create]
+  def index
+    @bookings = Booking.all
+  end
+
   def new
     @booking = Booking.new
   end
 
   def create
-    @booking = Bookmark.new(booking_params)
+    @car = Car.find(params[:car_id])
+    if current_user.client.nil?
+      @client = Client.create(user: current_user)
+    else
+      @client = current_user.client
+    end
+    @booking = Booking.new(booking_params)
     @booking.car = @car
-    @booking.client = current_user
-    Client.create(user: current_user) if current_user.client.blank?
-    @booking.client = current_user.client
-
-    if @booking.save
-      redirect_to booking_path(@booking)
+    @booking.client = @client
+    if @booking.save!
+      redirect_to cars_path
     end
   end
 
@@ -21,19 +29,34 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
+    @booking.status = "Accepted"
     @booking = Booking.update(booking_status)
-    redirect_to booking_path(@booking) if @booking.save
+    redirect_to bookings_path
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to car_path(@booking.car), status: :see_other
+    redirect_to bookings_path, status: :see_other
+  end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "Accepted"
+    @booking.save
+    redirect_to bookings_path
+  end
+
+  def reject
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_day, :end_day)
+    params.require(:booking).permit(:start_day, :end_day, :car_id, :client_id)
   end
 
   def booking_status
