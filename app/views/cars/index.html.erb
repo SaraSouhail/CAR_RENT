@@ -4,12 +4,17 @@
   <div class="row">
     <% @cars.each do |car| %>
       <div class="col-lg-4 car-container align-items-center justify-content-center d-flex p-4 position-relative me-5">
-        <div><img class="car-image" src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" alt="car-image"></div>
-        <div class="car-details py-3 px-4">
-          <h3>Brand :<%= car.brand %></h3>
-          <h3>Model :<%= car.model %></h3>
-          <p>description :<%= car.description %></p>
-          <p>price :<%= car.price %></p>
+        <div> <% if car.photo.key.nil?%>
+
+          <img class="car-image" src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" alt="car-image">
+          <% else %>
+          <%= cl_image_tag car.photo.key, class:"car-image" %>
+          <%end%></div>
+        <div class="car-details px-4">
+          <h5><strong><%= car.brand %> <%= car.model %></strong></h5>
+          <h5>Description: <%= car.description %></h5>
+          <h6><%= car.price %>/day</h6>
+          <h6>Owner: <%= car.owner.user.first_name %></h6>
         </div>
         <button class="btn btn-primary position-absolute bottom-0 end-0 me-3 my-2"><%= link_to "Book", new_car_booking_path(car), style: "color: white; text-decoration: none;" %></button>
       </div>

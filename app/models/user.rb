@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   has_one :client
   has_one :owner
+  has_one_attached :profile_photo
 
   after_create :create_by_role
 

@@ -3,16 +3,9 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <span class="text-warning">Car</span>Rent
     <% end %>
-<<<<<<< HEAD
-=======
      <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
      <span class="navbar-toggler-icon"></span>
      </button>
-<<<<<<< HEAD
-=======
-
->>>>>>> master
->>>>>>> c97ecc0259540192da3cd9be0d264e6f6162193f
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,37 +16,29 @@
           </li>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
             <%= link_to "Cars", cars_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <% if current_user.role == "owner" %>
-              <%= link_to "Profile", owner_path, class: "nav-link" %>
-            <% end %>
-            <% if current_user.role == "client" %>
-              <%= link_to "Profile", client_path, class: "nav-link" %>
-            <% end %>
-          </li>
+
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            <div> <% if current_user.profile_photo.key.nil?%>
+
+          <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="car-image">
+          <% else %>
+          <%= cl_image_tag current_user.profile_photo.key, class:"avatar" %>
+          <%end%></div>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            <% if current_user.role == "owner" %>
+              <%= link_to "Profile", owner_path, class: " dropdown-item nav-link p-3" %>
+            <% end %>
+            <% if current_user.role == "client" %>
+              <%= link_to "Profile", client_path, class: " dropdown-item nav-link p-3" %>
+            <% end %>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item p-3" %>
             </div>
           </li>
         <% else %>
-					<li class="nav-item">
-						<a class="nav-link" href="#about">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#services">Services</a>
-					</li>
 					<%# <li class="nav-item">
 						<a class="nav-link" href="#team">Team</a>
 					</li> %>
@@ -75,11 +60,6 @@
           <li class="nav-item">
             <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
           </li>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> master
         <% end %>
       </ul>
     </div>
