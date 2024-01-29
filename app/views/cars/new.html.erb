@@ -1,23 +1,23 @@
 <br>
 <h1 class="title-header text-center text-warning ">Add a Car</h1>
 <%= simple_form_for @car do |f| %>
+<%= f.error_notification %>
   <div class="row p-5 auth-div">
   <div class="form-inputs ms-3">
+    <%= f.input :photo, as: :file %>
     <%= f.input :brand,
-                required: false,
+                required: true,
                 autofocus: true,
                 input_html: { autocomplete: "brand", class: "form-control col-md-6 input-width" } %>
     <%= f.input :model,
-                required: false,
+                required: true,
                 input_html: { autocomplete: "model", class: "form-control col-md-6 input-width" } %>
     <%= f.input :price,
-                required: false,
+                required: true,
                 input_html: { autocomplete: "price", class: "form-control col-md-6 input-width" } %>
-    <div class="col-sm-10">
       <%= f.input :description,
-                  required: true,
-                  input_html: { autocomplete: "description", class: 'form-control input-width' } %>
-    </div>
+                required: true,
+                input_html: { autocomplete: "description", class: 'form-control col-md-6 input-width' } %>
     </div>
 
     <div class="form-actions ms-3 text-center">

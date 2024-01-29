@@ -4,11 +4,11 @@
   <div class="row p-5 auth-div">
   <div class="form-inputs ms-3">
     <%= f.input :email,
-                required: false,
+                required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email", class: "form-control col-md-6 input-width" } %>
     <%= f.input :password,
-                required: false,
+                required: true,
                 input_html: { autocomplete: "current-password", class: "form-control col-md-6 input-width" } %>
     <%= f.input :remember_me, as: :boolean, input_html: { class: "form-check-input" } if devise_mapping.rememberable? %>
     </div>

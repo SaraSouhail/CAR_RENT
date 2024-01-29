@@ -1,13 +1,18 @@
 <% if current_user.role == "owner" %>
 <% owner = current_user.owner %>
 
-<h1 style="margin-top: 70px">My Cars renting requests</h1>
+<h1 style="margin-top: 70px" class="text-center text-warning">My Cars renting requests</h1>
 <div class="container">
   <div class="row">
     <% my_bookings = @bookings.select { |book|  book.car.owner == owner} %>
     <% my_bookings.each do |booking| %>
     <div class="booking-requests-container col-lg-4 car-container align-items-center justify-content-center d-flex p-4 position-relative me-5">
-            <div><img class="car-image" src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" alt="car-image"></div>
+            <div> <% if booking.car.photo.key.nil?%>
+
+          <img class="car-image" src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" alt="car-image">
+          <% else %>
+          <%= cl_image_tag booking.car.photo.key, class:"car-image" %>
+          <%end%></div>
             <div class="car-details py-3 px-4">
               <h3><%= booking.car.brand %> <%= booking.car.model %></h3>
               <p> <%= booking.car.description %></p>
@@ -30,13 +35,18 @@
 <% else %>
 <% client = current_user.client %>
 
-<h1 style="margin-top: 70px">My Cars renting requests</h1>
+<h1 style="margin-top: 70px" class="text-center text-warning">My Cars renting requests</h1>
 <div class="container">
   <div class="row">
     <% my_bookings = @bookings.select { |book|  book.client == client} %>
     <% my_bookings.each do |booking| %>
     <div class="booking-requests-container col-lg-4 car-container align-items-center justify-content-center d-flex p-4 position-relative me-5">
-            <div><img class="car-image" src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" alt="car-image"></div>
+            <div> <% if booking.car.photo.key.nil?%>
+
+          <img class="car-image" src="https://hips.hearstapps.com/hmg-prod/images/img-1484-jpg-649644d3c1386.jpg?crop=0.571xw:0.762xh;0.240xw,0.195xh&resize=1200:*" alt="car-image">
+          <% else %>
+          <%= cl_image_tag booking.car.photo.key, class:"car-image" %>
+          <%end%></div>
             <div class="car-details py-3 px-4">
               <h3>Car: <%= booking.car.brand %> <%= booking.car.model %></h3>
               <p>Description: <%= booking.car.description %></p>
