@@ -1,0 +1,86 @@
+/* Add these styles to center and set width for form inputs */
+.form-inputs {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(222, 215, 215); /* Set background color */
+  padding: 20px; /* Add some padding for better appearance */
+  border-radius: 8px;
+  width: 700px;
+  box-shadow:  20px 20px 35px #a0a7b3,
+  -20px -20px 35px #d8e3f2; /* Optional: Add border-radius for rounded corners */
+}
+
+/* Set width for the inputs */
+.form-inputs input {
+  width: 500px;
+  margin-bottom: 10px; /* Optional: Add some margin between inputs */
+}
+
+/* Optional: You can add some margin or padding for better spacing */
+.form-inputs {
+  margin-top: 20px;
+}
+
+/* Optional: You can style the form actions as well */
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+  background-color: balck; /* Set background color */
+
+}
+
+/* Optional: Style the cancel account section */
+h3 {
+  margin-top: 40px;
+}
+
+/* Optional: Style the back link */
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Optional: Style the cancel account section */
+h3 {
+  margin-top: 40px;
+}
+
+form div input {
+  color: #fff; /* Set text color to white */
+}
+.hi{
+  width: 500px;
+}
+.hello{
+  color : white;
+}
+.cancel-button {
+  background-color: #0A1D56;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+  margin-right: 10px;
+  border-radius:5px ;
+  margin-top: 20px;
+}
+
+.update-link {
+  border-radius:5px ;
+  background-color: #0A1D56;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+}
+.back-link {
+  border-radius:5px ;
+  background-color: #0A1D56;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+}
